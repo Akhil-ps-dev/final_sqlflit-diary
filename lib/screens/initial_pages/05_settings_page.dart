@@ -17,13 +17,13 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Settings ',
-            style: TextStyle(fontFamily: "lato"),
-          ),
-          centerTitle: true,
-        ),
+        // appBar: AppBar(
+        //   title: Text(
+        //     'Settings ',
+        //     style: TextStyle(fontFamily: "lato"),
+        //   ),
+        //   centerTitle: true,
+        // ),
         body: SafeArea(
           child: ListView(
             padding: EdgeInsets.all(24),

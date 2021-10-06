@@ -7,7 +7,6 @@ import 'package:devolopment/db_helper/db_helper.dart';
 import 'package:devolopment/model_class/notes.dart';
 import 'package:devolopment/utils/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:sqflite/sqflite.dart';
 
 class NoteList extends StatefulWidget {
@@ -50,23 +49,6 @@ class NoteListState extends State<NoteList> {
                   }
                 },
               ),
-        actions: <Widget>[
-          noteList.length == 0
-              ? Container()
-              : IconButton(
-                  icon: Icon(
-                    axisCount == 2 ? Icons.list : Icons.grid_on,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(
-                      () {
-                        axisCount = axisCount == 2 ? 4 : 2;
-                      },
-                    );
-                  },
-                ),
-        ],
       );
     }
 
@@ -108,9 +90,8 @@ class NoteListState extends State<NoteList> {
   //!note List custom
 
   Widget getNotesList() {
-    return StaggeredGridView.countBuilder(
+    return ListView.builder(
       physics: BouncingScrollPhysics(),
-      crossAxisCount: 4,
       itemCount: count,
       itemBuilder: (BuildContext context, int index) => GestureDetector(
         onTap: () {
@@ -174,9 +155,6 @@ class NoteListState extends State<NoteList> {
           ),
         ),
       ),
-      staggeredTileBuilder: (int index) => StaggeredTile.fit(axisCount),
-      mainAxisSpacing: 4.0,
-      crossAxisSpacing: 4.0,
     );
   }
 
