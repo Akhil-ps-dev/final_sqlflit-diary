@@ -5,6 +5,7 @@ import 'package:devolopment/05_settings_file/01icon_widget.dart';
 import 'package:devolopment/05_settings_file/02_theme_page.dart';
 import 'package:devolopment/05_settings_file/03_font_page.dart';
 import 'package:devolopment/05_settings_file/04_lockscreen_page.dart';
+import 'package:devolopment/05_settings_file/notification_page/notification.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
@@ -41,8 +42,11 @@ class _SettingsPageState extends State<SettingsPage> {
                 title: "Settings",
                 children: <Widget>[
                   //!
+
                   ThemePage(),
                   FontPage(),
+                  NotificationPage(),
+
                   //!
                   const SizedBox(
                     height: 30,
