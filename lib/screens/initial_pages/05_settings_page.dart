@@ -2,10 +2,10 @@
 
 import 'package:devolopment/05_settings_file/01_account_page.dart';
 import 'package:devolopment/05_settings_file/01icon_widget.dart';
-import 'package:devolopment/05_settings_file/02_theme_page.dart';
-import 'package:devolopment/05_settings_file/03_font_page.dart';
 import 'package:devolopment/05_settings_file/04_lockscreen_page.dart';
-import 'package:devolopment/05_settings_file/notification_page/notification.dart';
+import 'package:devolopment/05_settings_file/font_page/03_font_page.dart';
+import 'package:devolopment/05_settings_file/notification_page/01notification_page.dart';
+import 'package:devolopment/05_settings_file/theme_page/02_theme_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
@@ -45,13 +45,16 @@ class _SettingsPageState extends State<SettingsPage> {
 
                   ThemePage(),
                   FontPage(),
-                  NotificationPage(),
 
                   //!
                   const SizedBox(
                     height: 30,
                   ),
-                  buildReportBug(context),
+                  buildSendNotification(context),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  buildLock(context),
                   const SizedBox(
                     height: 10,
                   ),
@@ -84,17 +87,33 @@ class _SettingsPageState extends State<SettingsPage> {
   //       onTap: () {},
   //     );
 
-  Widget buildReportBug(BuildContext context) => SimpleSettingsTile(
+  Widget buildSendNotification(BuildContext context) => SimpleSettingsTile(
+        title: 'Set Notification',
+        subtitle: '',
+        // leading: IconWidgets(
+        //   icon: Icons.star,
+        // ),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NotificationPage(),
+          ),
+        ),
+      );
+
+  Widget buildLock(BuildContext context) => SimpleSettingsTile(
         title: 'Lock Screen',
         subtitle: '',
         // leading: IconWidgets(
         //   icon: Icons.bug_report,
         // ),
+
         onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => LockScreen(),
-            )),
+          context,
+          MaterialPageRoute(
+            builder: (context) => LockScreen(),
+          ),
+        ),
       );
 
   Widget buildSendFeedback(BuildContext context) => SimpleSettingsTile(

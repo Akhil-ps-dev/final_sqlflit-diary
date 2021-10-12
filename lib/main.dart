@@ -1,9 +1,21 @@
 //@dart=2.9
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  AwesomeNotifications()
+      .initialize('resource://drawable/res_notification_app_icon', [
+    NotificationChannel(
+        channelKey: 'basic_channel',
+        channelName: 'Basic Notifications',
+        defaultColor: Colors.teal,
+        importance: NotificationImportance.High,
+        channelShowBadge: true)
+  ]);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
