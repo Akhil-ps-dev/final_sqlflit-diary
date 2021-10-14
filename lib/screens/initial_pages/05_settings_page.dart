@@ -1,8 +1,8 @@
 //@dart=2.9
 
-import 'package:devolopment/05_settings_file/01_account_page.dart';
-import 'package:devolopment/05_settings_file/01icon_widget.dart';
-import 'package:devolopment/05_settings_file/04_lockscreen_page.dart';
+
+import 'package:devolopment/05_settings_file/icon_widget/01icon_widget.dart';
+import 'package:devolopment/05_settings_file/lock_screen_page/04_lockscreen_page.dart';
 import 'package:devolopment/05_settings_file/font_page/03_font_page.dart';
 import 'package:devolopment/05_settings_file/notification_page/01notification_page.dart';
 import 'package:devolopment/05_settings_file/theme_page/02_theme_page.dart';
@@ -32,7 +32,7 @@ class _SettingsPageState extends State<SettingsPage> {
               SettingsGroup(
                 title: 'General',
                 children: <Widget>[
-                  AccountPage(),
+                //  AccountPage(),
 
                   //  buildNotification(),
                 ],

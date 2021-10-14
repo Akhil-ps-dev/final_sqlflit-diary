@@ -1,6 +1,6 @@
 //@dart=2.9
 
-import 'package:devolopment/05_settings_file/01icon_widget.dart';
+import 'package:devolopment/05_settings_file/icon_widget/01icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 
