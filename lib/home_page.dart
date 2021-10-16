@@ -1,7 +1,6 @@
 //@dart=2.9
 
 import 'package:devolopment/screens/initial_pages/01_note_list.dart';
-import 'package:devolopment/screens/initial_pages/02_Calendar_page.dart';
 import 'package:devolopment/screens/initial_pages/05_settings_page.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
     NoteList(),
-    CalendarPage(),
+    //CalendarPage(),
     SettingsPage(),
   ];
 
@@ -37,11 +36,11 @@ class _HomePageState extends State<HomePage> {
             ),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.calendar_today_outlined,
-              ),
-              label: 'Calendar'),
+          // BottomNavigationBarItem(
+          //     icon: Icon(
+          //       Icons.calendar_today_outlined,
+          //     ),
+          //     label: 'Calendar'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.settings,

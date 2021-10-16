@@ -1,10 +1,8 @@
 //@dart=2.9
 
-
-import 'package:devolopment/05_settings_file/icon_widget/01icon_widget.dart';
 import 'package:devolopment/05_settings_file/lock_screen_page/04_lockscreen_page.dart';
 import 'package:devolopment/05_settings_file/font_page/03_font_page.dart';
-import 'package:devolopment/05_settings_file/notification_page/01notification_page.dart';
+import 'package:devolopment/05_settings_file/notification_page/views/alarm_page.dart';
 import 'package:devolopment/05_settings_file/theme_page/02_theme_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,14 +27,14 @@ class _SettingsPageState extends State<SettingsPage> {
           child: ListView(
             padding: EdgeInsets.all(24),
             children: [
-              SettingsGroup(
-                title: 'General',
-                children: <Widget>[
-                //  AccountPage(),
+              // SettingsGroup(
+              //   title: 'General',
+              //   children: <Widget>[
+              //   //  AccountPage(),
 
-                  //  buildNotification(),
-                ],
-              ),
+              //     //  buildNotification(),
+              //   ],
+              // ),
               const SizedBox(height: 32),
               SettingsGroup(
                 title: "Settings",
@@ -67,10 +65,10 @@ class _SettingsPageState extends State<SettingsPage> {
                     height: 10,
                   ),
                   buildHelp(context),
-                  const SizedBox(
-                    height: 90,
-                  ),
-                  buildLogout(),
+                  // const SizedBox(
+                  //   height: 90,
+                  // ),
+                  //  buildLogout(),
                 ],
               ),
             ],
@@ -96,7 +94,7 @@ class _SettingsPageState extends State<SettingsPage> {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => NotificationPage(),
+            builder: (context) => AlarmPage(),
           ),
         ),
       );
@@ -143,12 +141,12 @@ class _SettingsPageState extends State<SettingsPage> {
         onTap: () {},
       );
 
-  Widget buildLogout() => SimpleSettingsTile(
-        title: 'Logout',
-        subtitle: '',
-        leading: IconWidgets(
-          icon: Icons.logout,
-        ),
-        onTap: () {},
-      );
+  // Widget buildLogout() => SimpleSettingsTile(
+  //       title: 'Logout',
+  //       subtitle: '',
+  //       leading: IconWidgets(
+  //         icon: Icons.logout,
+  //       ),
+  //       onTap: () {},
+  //     );
 }
