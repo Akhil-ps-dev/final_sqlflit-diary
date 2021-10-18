@@ -228,7 +228,7 @@ class _AlarmPageState extends State<AlarmPage> {
                                 child: Column(
                                   children: <Widget>[
                                     Image.asset(
-                                      'assets/add_alarm.png',
+                                      'assets/images/add_alarm.png',
                                       scale: 1.5,
                                     ),
                                     SizedBox(height: 8),

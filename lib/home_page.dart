@@ -23,7 +23,9 @@ class _HomePageState extends State<HomePage> {
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.orange,
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
+        unselectedFontSize: 0.0,
+        showSelectedLabels: true,
         unselectedItemColor: Colors.grey[700],
         onTap: (index) => setState(() => currentIndex = index),
         currentIndex: currentIndex,

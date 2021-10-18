@@ -1,15 +1,30 @@
 //@dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'Onboard_screen/onboard/onboard.dart';
 import 'home_page.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
+int isviewed;//onboard
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
 
+//onboard
+ SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  isviewed = prefs.getInt('onBoard');
+  
+//onboard
+
+  WidgetsFlutterBinding.ensureInitialized();
   var initializationSettingsAndroid =
       AndroidInitializationSettings('codex_logo');
   var initializationSettingsIOS = IOSInitializationSettings(
@@ -28,9 +43,6 @@ void main() async {
   });
   runApp(MyApp());
 }
-
-
-
 
 class MyApp extends StatelessWidget {
   @override
@@ -64,7 +76,8 @@ class MyApp extends StatelessWidget {
               fontSize: 14),
         ),
       ),
-      home: HomePage(),
+         home: isviewed != 0 ?  OnBoard() :  HomePage(),
+
     );
   }
 }
