@@ -22,11 +22,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.orange,
-        showUnselectedLabels: true,
-        unselectedFontSize: 0.0,
-        showSelectedLabels: true,
-        unselectedItemColor: Colors.grey[700],
+        backgroundColor: Colors.white,
+        unselectedItemColor: Colors.grey,
         onTap: (index) => setState(() => currentIndex = index),
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,

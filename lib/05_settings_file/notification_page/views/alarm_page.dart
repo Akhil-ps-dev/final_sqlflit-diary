@@ -45,9 +45,9 @@ class _AlarmPageState extends State<AlarmPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              'Alarm',
+              'Reminder',
               style: TextStyle(
-                  fontFamily: 'avenir',
+                  fontFamily: 'Sans',
                   fontWeight: FontWeight.w700,
                   color: Colors.black,
                   fontSize: 24),
@@ -102,16 +102,16 @@ class _AlarmPageState extends State<AlarmPage> {
                                         alarm.title,
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontFamily: 'avenir'),
+                                            fontFamily: 'Sans'),
                                       ),
                                     ],
                                   ),
                                 ],
                               ),
                               Text(
-                                'Mon-Fri',
+                                'Mon-Sunday',
                                 style: TextStyle(
-                                    color: Colors.white, fontFamily: 'avenir'),
+                                    color: Colors.black, fontFamily: 'Sans'),
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -121,7 +121,7 @@ class _AlarmPageState extends State<AlarmPage> {
                                     alarmTime,
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontFamily: 'avenir',
+                                        fontFamily: 'Sans',
                                         fontSize: 24,
                                         fontWeight: FontWeight.w700),
                                   ),
@@ -137,7 +137,7 @@ class _AlarmPageState extends State<AlarmPage> {
                           ),
                         );
                       }).followedBy([
-                        if (_currentAlarms.length < 5)
+                        if (_currentAlarms.length < 2)
                           DottedBorder(
                             strokeWidth: 2,
                             color: CustomColors.clockOutline,
@@ -236,7 +236,7 @@ class _AlarmPageState extends State<AlarmPage> {
                                       'Add Alarm',
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontFamily: 'avenir'),
+                                          fontFamily: 'Sans'),
                                     ),
                                   ],
                                 ),
@@ -287,8 +287,12 @@ class _AlarmPageState extends State<AlarmPage> {
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics);
 
-    await flutterLocalNotificationsPlugin.schedule(0, 'Office', alarmInfo.title,
-        scheduledNotificationDateTime, platformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.schedule(
+        0,
+        'Hey! Write your diary',
+        alarmInfo.title,
+        scheduledNotificationDateTime,
+        platformChannelSpecifics);
   }
 
   void onSaveAlarm() {

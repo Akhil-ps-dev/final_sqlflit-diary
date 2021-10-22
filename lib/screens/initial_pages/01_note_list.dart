@@ -71,19 +71,17 @@ class NoteListState extends State<NoteList> {
             ),
       floatingActionButton: FloatingActionButton.extended(
         elevation: 6,
-        shape: StadiumBorder(
-          side: BorderSide(
-            color: Colors.black,
-            width: 1,
-          ),
+        isExtended: true,
+        label: Text(
+          "Add Dairy",
+          style: TextStyle(color: Colors.white),
         ),
-        label: Text("Add Note"),
-        icon: Icon(Icons.add, color: Colors.black),
+        icon: Icon(Icons.add, color: Colors.white),
         onPressed: () {
           navigateToDetail(Note('', '', 3, 0), 'Add Note');
         },
         tooltip: 'Add Note',
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFFFA738),
       ),
     );
   }
@@ -102,8 +100,10 @@ class NoteListState extends State<NoteList> {
           child: Container(
             padding: EdgeInsets.all(8.0),
             decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color(0xFFFE6197), Color(0xFFFFB463)]),
               color: colors[this.noteList[index].color],
-              border: Border.all(width: 2, color: Colors.black),
+              //  border: Border.all(width: 2, color: Colors.black),
               borderRadius: BorderRadius.circular(15.0),
             ),
             child: Column(
@@ -162,20 +162,26 @@ class NoteListState extends State<NoteList> {
   Color getPriorityColor(int priority) {
     switch (priority) {
       case 1:
-        return Colors.red;
+        return Colors.white;
         break;
       case 2:
-        return Colors.red;
+        return Colors.white;
         break;
       case 3:
-        return Colors.red;
+        return Colors.white;
         break;
       case 4:
-        return Colors.red;
+        return Colors.white;
+        break;
+      case 5:
+        return Colors.white;
+        break;
+      case 6:
+        return Colors.white;
         break;
 
       default:
-        return Colors.red;
+        return Colors.white;
     }
   }
 

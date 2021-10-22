@@ -1,12 +1,12 @@
 //@dart=2.9
 
+import 'package:devolopment/splashScreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Onboard_screen/onboard/onboard.dart';
-import 'home_page.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -24,7 +24,7 @@ void main() async {
   
 //onboard
 
-  WidgetsFlutterBinding.ensureInitialized();
+
   var initializationSettingsAndroid =
       AndroidInitializationSettings('codex_logo');
   var initializationSettingsIOS = IOSInitializationSettings(
@@ -76,7 +76,8 @@ class MyApp extends StatelessWidget {
               fontSize: 14),
         ),
       ),
-         home: isviewed != 0 ?  OnBoard() :  HomePage(),
+      
+         home: isviewed != 0 ?  OnBoard() :  SplashScrren(),
 
     );
   }

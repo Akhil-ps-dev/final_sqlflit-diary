@@ -1,6 +1,6 @@
 
 //@dart=2.9
-import 'package:devolopment/home_page.dart';
+import 'package:devolopment/splashScreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -75,7 +75,7 @@ class _OnBoardState extends State<OnBoard> {
             onPressed: () {
               _storeOnboardInfo();
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) =>  HomePage()));
+                  context, MaterialPageRoute(builder: (context) =>  SplashScrren()));
             },
             child: Text(
               "Skip",
@@ -154,7 +154,7 @@ class _OnBoardState extends State<OnBoard> {
                       if (index == screens.length - 1) {
                         await _storeOnboardInfo();
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => HomePage()));
+                            MaterialPageRoute(builder: (context) => SplashScrren()));
                       }
 
                       _pageController.nextPage(
