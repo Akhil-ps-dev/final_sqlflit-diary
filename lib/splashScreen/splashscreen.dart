@@ -12,7 +12,7 @@ class SplashScrren extends StatelessWidget {
       navigateAfterSeconds: HomePage(),
       imageBackground: Image.asset('assets/images/splashscreen.jpg').image,
       loaderColor: Colors.orange,
-      loadingText: Text('Loading'),
+      loadingText: Text('Loading...'),
       seconds: 12,
     );
   }

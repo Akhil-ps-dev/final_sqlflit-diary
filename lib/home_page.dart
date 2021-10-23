@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
     NoteList(),
-    //CalendarPage(),
+    
     SettingsPage(),
   ];
 
@@ -22,7 +22,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+       
+
         unselectedItemColor: Colors.grey,
         onTap: (index) => setState(() => currentIndex = index),
         currentIndex: currentIndex,
