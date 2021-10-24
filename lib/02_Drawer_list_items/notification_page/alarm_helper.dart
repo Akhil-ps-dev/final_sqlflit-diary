@@ -1,5 +1,5 @@
 //@dart=2.9
-import 'package:devolopment/05_settings_file/notification_page/models/alarm_info.dart';
+import 'package:devolopment/02_Drawer_list_items/notification_page/models/alarm_info.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 

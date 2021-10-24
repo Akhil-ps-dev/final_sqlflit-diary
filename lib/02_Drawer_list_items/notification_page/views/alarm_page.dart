@@ -1,7 +1,7 @@
 //@dart=2.9
-import 'package:devolopment/05_settings_file/notification_page/alarm_helper.dart';
-import 'package:devolopment/05_settings_file/notification_page/constants/theme_data.dart';
-import 'package:devolopment/05_settings_file/notification_page/models/alarm_info.dart';
+import 'package:devolopment/02_Drawer_list_items/notification_page/alarm_helper.dart';
+import 'package:devolopment/02_Drawer_list_items/notification_page/constants/theme_data.dart';
+import 'package:devolopment/02_Drawer_list_items/notification_page/models/alarm_info.dart';
 import 'package:devolopment/main.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,9 @@ class _AlarmPageState extends State<AlarmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 32, vertical: 64),
         child: Column(

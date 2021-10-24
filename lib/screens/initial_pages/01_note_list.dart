@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:devolopment/01_note_files/note_details.dart';
 import 'package:devolopment/01_note_files/search_note.dart';
 import 'package:devolopment/db_helper/db_helper.dart';
+import 'package:devolopment/drawer/navigation_drawer.dart';
 import 'package:devolopment/model_class/notes.dart';
 import 'package:devolopment/utils/widgets.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,7 @@ class NoteListState extends State<NoteList> {
     }
 
     return Scaffold(
+      endDrawer: NavigationDrawerWidget(),
       appBar: myAppBar(),
       body: noteList.length == 0
           ? Container(
